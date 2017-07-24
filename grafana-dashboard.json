@@ -1,0 +1,4309 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "description": "Linux Server Monitor Dashboard by kmonsoor",
+  "editable": true,
+  "graphTooltip": 0,
+  "hideControls": true,
+  "id": 7,
+  "links": [],
+  "refresh": "5s",
+  "rows": [
+    {
+      "collapse": false,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "id": 1,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "softirq",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.cpu.softirq",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "user",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.cpu.user",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "system",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.cpu.system",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "iowait",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.cpu.iowait",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU Utilization",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "id": 2,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Load during the last minute",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.load.load1",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Load during the last 5 minutes",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.load.load5",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Load during the last 15 minutes",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.load.load15",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Load Average",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "CPU Utilization & Load Average",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": "500",
+      "panels": [
+        {
+          "alert": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [ 5 ],
+                  "type": "lt"
+                },
+                "operator": {
+                  "type": "and"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "Disk space available",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [ "$interval" ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [ "null" ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "netdata.disk_space._.avail",
+                    "policy": "default",
+                    "refId": "B",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [ "value" ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "mean"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "host",
+                        "operator": "=~",
+                        "value": "/^$host$/"
+                      }
+                    ]
+                  },
+                  "params": [ "B", "5m", "now" ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              }
+            ],
+            "executionErrorState": "alerting",
+            "frequency": "60s",
+            "handler": 1,
+            "name": "Disk Space Available (seed-0)",
+            "noDataState": "no_data",
+            "notifications": []
+          },
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "height": "250",
+          "id": 3,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Disk space available",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.disk_space._.avail",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Disk space used",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.disk_space._.used",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Disk space reserved for root",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.disk_space._.reserved_for_root",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "lt",
+              "value": 5
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk Space Usage",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decgbytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "height": "250",
+          "id": 14,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Utilization",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.disk_util.xvda.utilization",
+              "policy": "default",
+              "query": "SELECT mean(\"value\") FROM \"netdata.disk_util.xvda1.utilization\" WHERE \"host\" =~ /^$host$/ AND $timeFilter GROUP BY time($interval) fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk Utilization",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Disk Space Usage & Disk Utilization",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "id": 4,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Free ram",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ram.free",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Used ram",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ram.used",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Cached",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ram.cached",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Buffers",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ram.buffers",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "System Memory",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decmbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Free swap space",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.swap.free",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Used swap space",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.swap.used",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "System Swap",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decmbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "System Memory & System Swap",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 19,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Committed memory",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.committed.Committed_AS",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Committed Memory",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decmbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 20,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Minor",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.pgfaults.minor",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Major",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.pgfaults.major",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory Page Faults",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Committed Memory & Memory Page Faults",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": true,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 21,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Dirty",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.writeback.Dirty",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Writeback",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.writeback.Writeback",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Writeback Memory",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decmbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 22,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Slab",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.kernel.Slab",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "KernelStack",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.kernel.KernelStack",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "PageTables",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.kernel.PageTables",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "VmallocUsed",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.mem.kernel.VmallocUsed",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory Used by Kernel",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decmbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Writeback Memory & Memory Used by Kernel",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "NMI (non-maskable interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.NMI",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "LOC (local timer interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.LOC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Total number of CPU interrupts",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.intr.interrupts",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "RES (rescheduling interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.RES",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "PMI (performance monitoring interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.PMI",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "CAL (function call interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.CAL",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "TLB (translation lookaside buffer shootdowns)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.TLB",
+              "policy": "default",
+              "refId": "G",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "MCP (machine check polls)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.MCP",
+              "policy": "default",
+              "refId": "H",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "TRM (thermal event interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.TRM",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "DFR (deferred error APIC interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.DFR",
+              "policy": "default",
+              "refId": "J",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "ERR (interrupts without known source)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.ERR",
+              "policy": "default",
+              "refId": "K",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "IWI (IRQ work interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.IWI",
+              "policy": "default",
+              "refId": "L",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "MCE (machine check exceptions)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.MCE",
+              "policy": "default",
+              "refId": "M",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "MIS (message signaled interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.MIS",
+              "policy": "default",
+              "refId": "N",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "PIN (posted-interrupt notification events)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.PIN",
+              "policy": "default",
+              "refId": "O",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "PIW (posted-interrupt wakeup events)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.PIW",
+              "policy": "default",
+              "refId": "P",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "RTR (APIC ICR read retries)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.RTR",
+              "policy": "default",
+              "refId": "Q",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "SPU (spurious interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.SPU",
+              "policy": "default",
+              "refId": "R",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "THR (threshold APIC interrupts)",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.interrupts.THR",
+              "policy": "default",
+              "refId": "S",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "System interrupts",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "System interrupts",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "id": 7,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Received",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ipv4.InOctets",
+              "policy": "default",
+              "query": "SELECT mean(\"value\") FROM \"netdata.system.ipv4.received\" WHERE \"host\" =~ /^$host$/ AND $timeFilter GROUP BY time($interval) fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Sent",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ipv4.sent",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total IPv4 Traffic",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "Kbits",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 8,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Received",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ipv6.received",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Sent",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.ipv6.sent",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total IPv6 Traffic",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "Kbits",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Total IPv4 Traffic & Total IPv6 Traffic",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": true,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 25,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Received",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv4.tcppackets.InSegs",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Sent",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv4.tcppackets.OutSegs",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "IPv4 TCP Packets",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 26,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Received",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv4.udppackets.InDatagrams",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Sent",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv4.udppackets.OutDatagrams",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "IPv4 UDP Packets",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "IPv4 TCP/UDP Packets",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": true,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 27,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Received",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv6.packets.received",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Sent",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv6.packets.sent",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "IPv6 TCP Packets",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 28,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Received",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv6.udppackets.received",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Sent",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.ipv6.udppackets.sent",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "IPv6 UDP Packets",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "IPv6 TCP/UDP Packets",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 9,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Running",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.processes.running",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Blocked",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.processes.blocked",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "System Processes (from /proc/stat)",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 11,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Active",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.active_processes.active",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "System Active Processes (from /proc/loadavg)",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "System Processes & System Active Processes",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "fill": 1,
+          "id": 17,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "TIMER",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.TIMER",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "NET_TX",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.NET_TX",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "NET_RX",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.NET_RX",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "BLOCK",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.BLOCK",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "SCHED",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.SCHED",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "RCU",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.RCU",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "HI",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.HI",
+              "policy": "default",
+              "refId": "G",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "BLOCK_IOPOLL",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.BLOCK_IOPOLL",
+              "policy": "default",
+              "refId": "H",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "TASKLET",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.TASKLET",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "HRTIMER",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softirqs.HRTIMER",
+              "policy": "default",
+              "refId": "J",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "System softirqs",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "your-influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "id": 18,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Processed",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softnet_stat.processed",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            },
+            {
+              "alias": "Dropped",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [ "$interval" ],
+                  "type": "time"
+                },
+                {
+                  "params": [ "null" ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "netdata.system.softnet_stat.dropped",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [ "value" ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "System softnet",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "System softirqs & System softnet",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [ "server", "netdata", "influxdb" ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now-2m"
+  },
+  "timepicker": {
+    "nowDelay": "2m",
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "Generic Netdata-InfluxDB Dashboard",
+  "version": 1,
+  "author": "Khaled Monsoor <k@kmonsoor.com>",
+  "repository": "https://github.com/kmonsoor/netdata-influx-grafana/"
+}
