@@ -2,7 +2,7 @@
   "__inputs": [
     {
       "name": "DS_CENTCOM-INFLUXDB",
-      "label": "centcom-influxdb",
+      "label": "your-influxdb",
       "description": "",
       "type": "datasource",
       "pluginId": "influxdb",
