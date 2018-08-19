@@ -29,6 +29,13 @@ Initially it was based on [this dashboard on Grafana gallery](https://grafana.co
 
 ## Datasource setup in grafana
 
-Datasource -> New
-_Type_: InfluxDB
-_Name_: opentsdb
+Configuration -> Datasources -> Add
+
+~~~~
+Name: influx-opentsdb
+Type: InfluxDB
+URL:  http://localhost:8086
+
+[InfluxDB Details]
+Database: opentsdb
+~~~~
