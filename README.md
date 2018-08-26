@@ -1,4 +1,6 @@
-# Grafana dashboard for Netdata (Netdata -> InfluxDB via opentsdb) based system health monitoring system
+# `Grafana` dashboard for `Netdata` monitoring system via `Influxdb` timeseries database
+
+![dataflow](./flow.png)
 
 ## How to use
 
