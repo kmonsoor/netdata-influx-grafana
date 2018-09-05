@@ -3228,7 +3228,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "netdata.ipv4.tcppackets.InSegs",
+              "measurement": "netdata.ipv4.tcppackets.received",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -3271,7 +3271,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "netdata.ipv4.tcppackets.OutSegs",
+              "measurement": "netdata.ipv4.tcppackets.sent",
               "policy": "default",
               "refId": "B",
               "resultFormat": "time_series",
@@ -3379,7 +3379,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "netdata.ipv4.udppackets.InDatagrams",
+              "measurement": "netdata.ipv4.udppackets.received",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -3422,7 +3422,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "netdata.ipv4.udppackets.OutDatagrams",
+              "measurement": "netdata.ipv4.udppackets.sent",
               "policy": "default",
               "refId": "B",
               "resultFormat": "time_series",
