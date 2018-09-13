@@ -2912,10 +2912,8 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "netdata.system.ipv4.InOctets",
+              "measurement": "netdata.system.ipv4.received",
               "policy": "default",
-              "query": "SELECT mean(\"value\") FROM \"netdata.system.ipv4.received\" WHERE \"host\" =~ /^$host$/ AND $timeFilter GROUP BY time($interval) fill(null)",
-              "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
