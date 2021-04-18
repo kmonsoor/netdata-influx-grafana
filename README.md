@@ -1,4 +1,4 @@
-# `Grafana` dashboard for `Netdata` monitoring system via `Influxdb` timeseries database
+# Grafana dashboard for Netdata monitoring system via Influxdb time-series database
 
 ![dataflow](./flow.png)
 
